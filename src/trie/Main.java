@@ -17,7 +17,11 @@ public class Main {
         List<String> results = trie.searchByPrefix("app", 5);
         System.out.println("results = " + results);
 
-        results = trie.searchByPrefix("app", 3);
+        trie.delete("apples");
+        results = trie.searchByPrefix("app", 5);
+        System.out.println("results = " + results);
+
+        results = trie.searchByPrefix("app", 2);
         System.out.println("results = " + results);
     }
 
@@ -42,6 +46,17 @@ public class Main {
                 current = current.children.get(c);
             }
             current.isEndOfWord = true;
+        }
+
+        public boolean search(String word) {
+            TrieNode current = root;
+            for (char c : word.toCharArray()) {
+                if (!current.children.containsKey(c)) {
+                    return false;
+                }
+                current = current.children.get(c);
+            }
+            return current.isEndOfWord;
         }
 
         private TrieNode searchPrefix(String prefix) {
@@ -78,6 +93,31 @@ public class Main {
                 dfs(entry.getValue(), sb, results, limit);
                 sb.deleteCharAt(sb.length() - 1);
             }
+        }
+
+        public void delete(String word) {
+            delete(root, word, 0);
+        }
+
+        private boolean delete(TrieNode node, String word, int index) {
+            if (index == word.length()) {
+                if (!node.isEndOfWord)
+                    return false;
+                node.isEndOfWord = false;
+                return node.children.isEmpty();
+            }
+
+            char ch = word.charAt(index);
+            if (!node.children.containsKey(ch))
+                return false;
+
+            boolean shouldDelete = delete(node.children.get(ch), word, index + 1);
+            if (shouldDelete) {
+                node.children.remove(ch);
+                return node.children.isEmpty() && !node.isEndOfWord;
+            }
+
+            return false;
         }
     }
 }
