@@ -23,7 +23,8 @@ public class Main {
     }
 
     static class TrieNode {
-        Map<Character, TrieNode> children = new TreeMap<>(); // TreeMap ensures lexicographical order
+        Map<Character, TrieNode> children = new HashMap<>();
+//        Map<Character, TrieNode> children = new TreeMap<>(); // TreeMap ensures lexicographical order
         boolean isEndOfWord = false;
     }
 
