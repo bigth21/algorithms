@@ -1,9 +1,6 @@
 package trie;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,7 +23,7 @@ public class Main {
     }
 
     static class TrieNode {
-        Map<Character, TrieNode> children = new HashMap<>();
+        Map<Character, TrieNode> children = new TreeMap<>(); // TreeMap ensures lexicographical order
         boolean isEndOfWord = false;
     }
 
