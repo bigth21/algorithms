@@ -7,7 +7,7 @@ public class Main {
         List<Fibonacci> fibonacciList = List.of(new FibonacciBruteForce(), new FibonacciTabulation(), new FibonacciMemoization());
         for (Fibonacci fibonacci : fibonacciList) {
             long startTime = System.currentTimeMillis();
-            System.out.println(fibonacci.getClass().getSimpleName() + ".execute() = " + fibonacci.execute(45));
+            System.out.println(fibonacci.getClass().getSimpleName() + ".execute() = " + fibonacci.calculate(45));
             long endTime = System.currentTimeMillis();
             System.out.println("Time taken: " + (endTime - startTime) + " ms");
         }

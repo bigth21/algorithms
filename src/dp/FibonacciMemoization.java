@@ -2,7 +2,7 @@ package dp;
 
 public class FibonacciMemoization implements Fibonacci {
     @Override
-    public int execute(int n) {
+    public int calculate(int n) {
         int[] memo = new int[n + 1];
         return dfs(memo, n);
     }

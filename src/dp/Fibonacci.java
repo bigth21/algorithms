@@ -1,5 +1,5 @@
 package dp;
 
 public interface Fibonacci {
-    int execute(int n);
+    int calculate(int n);
 }
