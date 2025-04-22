@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Fibonacci> fibonacciList = List.of(new BruteForce(), new Tabulation(), new Memoization());
+        List<Fibonacci> fibonacciList = List.of(new BruteForce(), new DpTabulation(), new DpMemoization());
         for (Fibonacci fibonacci : fibonacciList) {
             long startTime = System.nanoTime();
 

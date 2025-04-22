@@ -1,6 +1,6 @@
 package dp;
 
-public class Memoization implements Fibonacci {
+public class DpMemoization implements Fibonacci {
     @Override
     public int calculate(int n) {
         int[] memo = new int[n + 1];
