@@ -1,6 +1,6 @@
 package dp;
 
-public class FibonacciBruteForce implements Fibonacci {
+public class BruteForce implements Fibonacci {
     @Override
     public int calculate(int n) {
         if (n == 0 || n == 1)

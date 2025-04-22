@@ -1,17 +1,12 @@
-package primenumber;
+package sieveoferasthenes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SieveOfEratosthenes { // TODO: Brutal force, SQRT
-    public static void main(String[] args) {
-        int n = 50;
-        List<Integer> primes = findPrimes(n);
-        System.out.println("primes = " + primes);
-    }
-
-    public static List<Integer> findPrimes(int n) {
+public class SieveOfEratosthenes implements PrimeNumbers {
+    @Override
+    public List<Integer> findPrimes(int n) {
         boolean[] isPrime = new boolean[n + 1];
         Arrays.fill(isPrime, 2, n + 1, true);
 

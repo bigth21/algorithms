@@ -1,6 +1,6 @@
 package dp;
 
-public class FibonacciTabulation implements Fibonacci {
+public class Tabulation implements Fibonacci {
     @Override
     public int calculate(int n) {
         int[] dp = new int[n + 1];
