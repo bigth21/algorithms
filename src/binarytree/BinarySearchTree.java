@@ -1,9 +1,9 @@
 package binarytree;
 
-public class BinaryTree {
+public class BinarySearchTree {
     Node root;
 
-    public BinaryTree() {
+    public BinarySearchTree() {
         root = null;
     }
 
@@ -114,7 +114,7 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        BinarySearchTree tree = new BinarySearchTree();
         tree.add(10);
         tree.add(5);
         tree.add(15);
